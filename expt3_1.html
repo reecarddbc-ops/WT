@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Engineering College</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 40px 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 800px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    header {
+      background: #2563eb;
+      color: #fff;
+      text-align: center;
+      padding: 25px;
+    }
+
+    nav {
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #2563eb;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 20px 30px;
+      border-top: 1px solid #eee;
+    }
+
+    section h2 {
+      color: #333;
+      margin-top: 0;
+    }
+
+    article {
+      background: #f9fafb;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    article h3, article h2 {
+      color: #2563eb;
+      margin-top: 0;
+    }
+
+    aside {
+      background: #f1f5f9;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #444;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    form input, form button {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      width: 100%;
+    }
+
+    form button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    form button:hover {
+      background: #1d4ed8;
+    }
+
+    progress, meter {
+      width: 100%;
+      height: 20px;
+      margin: 10px 0;
+    }
+
+    footer {
+      text-align: center;
+      background: #f1f1f1;
+      color: #555;
+      font-size: 13px;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <header>
+      <h1>Engineering College</h1>
+      <p>Welcome to the field of engineering</p>
+    </header>
+
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Articles</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <section>
+      <h2>Departments</h2>
+      <article>
+        <h3>Computer Department</h3>
+        <p>The Computer Department focuses on software development, programming, data science, and artificial intelligence. Students learn modern technologies like Python, Java, and web development.</p>
+      </article>
+
+      <article>
+        <h3>Electrical Department</h3>
+        <p>The Electrical Department specializes in power systems, circuits, electronics, and renewable energy. Students gain hands-on experience with electrical machines and embedded systems.</p>
+      </article>
+
+      <aside>
+        <h3>Quick Info</h3>
+        <p>Engineering is the art of designing and building, and it can be broken down into six areas, encompassing everything from manufacturing to aerospace to computer software.</p>
+      </aside>
+    </section>
+
+    <section>
+      <h2>Registration Form</h2>
+      <form>
+        <input type="text" name="username" placeholder="Enter your name" required autofocus>
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <input type="password" name="password" placeholder="Enter password (min 6 chars)" pattern=".{6,}" required>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Progress and Meter</h2>
+      <p>Form completion progress:</p>
+      <progress value="50" max="100"></progress>
+
+      <p>CPU usage meter:</p>
+      <meter value="0.4" min="0" max="1" low="0.3" high="0.7" optimum="0.5"></meter>
+    </section>
+
+    <footer>
+      &copy; 2025 My Experiment Page
+    </footer>
+
+  </div>
+
+</body>
+</html>

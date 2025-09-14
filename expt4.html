@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS</title>
+
+  <!-- Internal CSS -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #eef2f6;
+      margin: 0;
+      padding: 40px 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 800px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+    }
+
+    header {
+      background: #0d47a1;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    section {
+      padding: 20px 30px;
+      border-top: 1px solid #eee;
+    }
+
+    section h2 {
+      color: #0d47a1;
+      margin-top: 0;
+    }
+
+    .highlight {
+      border: 2px solid #ff9800;
+      padding: 15px;
+      margin-top: 10px;
+      background: #fff8e1;
+      border-radius: 8px;
+    }
+
+    footer {
+      text-align: center;
+      background: #0d47a1;
+      color: #fff;
+      font-size: 13px;
+      padding: 12px;
+    }
+  </style>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <header>
+      <h1>Cascading Style Sheets</h1>
+      <p>CSS, which stands for Cascading Style Sheets, is a style sheet language used for describing the presentation of a document written in a markup language, most commonly HTML. It is a fundamental technology of the World Wide Web, alongside HTML and JavaScript.</p>
+    </header>
+
+   
+    <section style="background:#fcfdff;">
+      <h2>About Engineering</h2>
+      <p class="highlight">
+        Engineering is the application of science and technology to design, build, and improve 
+        structures, machines, systems, and processes. It includes branches like Civil, Mechanical, 
+        Electrical, and Computer Engineering.
+      </p>
+      <!-- Inline CSS -->
+      <p style="color: green; font-weight: bold; margin-top: 15px;">
+        This paragraph is styled using Inline CSS.
+      </p>
+    </section>
+
+    <section style="background:#f5fffa;">
+      <h2>Popular Engineering Branches</h2>
+      <div class="highlight">
+        <ul>
+          <li><b>Civil Engineering</b> – Designing buildings, bridges, roads, and dams.</li>
+          <li><b>Mechanical Engineering</b> – Working with machines, engines, and manufacturing.</li>
+          <li><b>Electrical Engineering</b> – Studying circuits, power systems, and renewable energy.</li>
+          <li><b>Computer Engineering</b> – Combining software and hardware systems design.</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      &copy; 2025 Engineering Experiment
+    </footer>
+
+  </div>
+
+</body>
+</html>

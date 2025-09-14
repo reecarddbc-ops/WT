@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Semantic Webpage</title>
+  <style>
+    /* Base */
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Full-width background but centered content */
+    .container {
+      width: 100%;
+      max-width: 900px;         /* ✅ keeps it normal size */
+      margin: 0 auto;
+      padding: 20px;
+      background: #fff;
+      box-sizing: border-box;
+    }
+
+    /* Header */
+    header {
+      background: #2563eb;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    /* Navigation */
+    nav {
+      text-align: center;
+      margin: 20px 0;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #2563eb;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    /* Form */
+    form {
+      background: #f9f9f9;
+      padding: 20px;
+      border-radius: 6px;
+    }
+    form label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+    form input, form select, form button {
+      display: block;
+      width: 100%;
+      margin-top: 6px;
+      padding: 8px;                 /* ✅ smaller padding */
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 0.9rem;             /* ✅ smaller font */
+    }
+
+    form button {
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    form button:hover {
+      background: #1d4ed8;
+    }
+
+    /* Progress and meter */
+    progress, meter {
+      width: 100%;
+      height: 16px;
+      margin-top: 10px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #666;
+      font-size: 0.85rem;
+      padding-bottom: 20px;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .container {
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <header>
+    <h1></h1>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <section>
+    <h2>Sign Up Form</h2>
+    <form>
+      <label>Name</label>
+      <input type="text" placeholder="Enter your name" required autofocus>
+
+      <label>Email</label>
+      <input type="email" placeholder="Enter your email" required>
+
+      <label>Phone (10 digits)</label>
+      <input type="tel" pattern="\d{10}" placeholder="1234567890">
+
+      <label>Password</label>
+      <input type="password" placeholder="Enter password" required pattern="(?=.{8,})(?=.*\d)(?=.*[A-Za-z]).*">
+
+      <label>Role</label>
+      <select required>
+        <option value="">Select</option>
+        <option>Student</option>
+        <option>Teacher</option>
+      </select>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <h3>Form Progress</h3>
+    <progress value="40" max="100">40%</progress>
+  </section>
+
+  <aside>
+    <h3>Your Satisfaction Level</h3>
+    <meter value="6" min="0" max="10">6/10</meter>
+  </aside>
+
+  <footer>
+    <p>&copy; 2025 Simple Semantic Page</p>
+  </footer>
+
+</div>
+
+</body>
+</html>

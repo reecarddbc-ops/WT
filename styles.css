@@ -1,0 +1,14 @@
+/* External CSS file */
+body {
+  line-height: 1.6;
+}
+
+section p, li {
+  font-size: 15px;
+  color: #333;
+}
+
+.highlight:hover {
+  background: #ffe0b2;
+  border-color: #fb8c00;
+}
