@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Basics & DOM Manipulation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      text-align: center;
+      padding: 30px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+    #output {
+      margin-top: 20px;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+      text-align: left;
+      width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>JavaScript Basics & DOM Manipulation</h1>
+  <button onclick="runDemo()">Run Example</button>
+
+  <div id="output"></div>
+
+  <script>
+    function runDemo() {
+      const output = document.getElementById("output");
+      output.innerHTML = "<h3>Results:</h3>";
+
+      // --- IF ELSE EXAMPLE ---
+      let number = 5;
+      if (number > 0) {
+        output.innerHTML += "1️⃣ Number is positive<br>";
+      } else if (number < 0) {
+        output.innerHTML += "1️⃣ Number is negative<br>";
+      } else {
+        output.innerHTML += "1️⃣ Number is zero<br>";
+      }
+
+      // --- SWITCH EXAMPLE ---
+      let day = 3;
+      switch (day) {
+        case 1:
+          output.innerHTML += "2️⃣ It's Monday<br>";
+          break;
+        case 2:
+          output.innerHTML += "2️⃣ It's Tuesday<br>";
+          break;
+        case 3:
+          output.innerHTML += "2️⃣ It's Wednesday<br>";
+          break;
+        default:
+          output.innerHTML += "2️⃣ Unknown day<br>";
+      }
+
+      // --- FOR LOOP EXAMPLE ---
+      output.innerHTML += "<br>3️⃣ For Loop (1 to 5): ";
+      for (let i = 1; i <= 5; i++) {
+        if (i === 3) continue; // skip 3
+        if (i === 5) break;    // stop at 4
+        output.innerHTML += i + " ";
+      }
+      output.innerHTML += "<br>";
+
+      // --- WHILE LOOP EXAMPLE ---
+      output.innerHTML += "<br>4️⃣ While Loop (count to 3): ";
+      let count = 1;
+      while (count <= 3) {
+        output.innerHTML += count + " ";
+        count++;
+      }
+      output.innerHTML += "<br>";
+
+      // --- DO-WHILE LOOP EXAMPLE ---
+      output.innerHTML += "<br>5️⃣ Do-While Loop (count to 3): ";
+      let j = 1;
+      do {
+        output.innerHTML += j + " ";
+        j++;
+      } while (j <= 3);
+      output.innerHTML += "<br>";
+
+      // --- EXIT / RETURN EXAMPLE ---
+      output.innerHTML += "<br>6️⃣ Exiting Function Early (using return)...<br>";
+      output.innerHTML += "Done Executing!";
+    }
+  </script>
+
+</body>
+</html>
