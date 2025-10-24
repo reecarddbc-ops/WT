@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Registration Form</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #74b9ff, #a29bfe);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+      padding: 30px 40px;
+      width: 350px;
+      transition: 0.3s ease;
+    }
+
+    .container:hover {
+      transform: scale(1.02);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-top: 10px;
+      color: #555;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      border-color: #6c5ce7;
+      box-shadow: 0 0 5px rgba(108, 92, 231, 0.5);
+    }
+
+    .error {
+      color: red;
+      font-size: 13px;
+      margin-top: 2px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 20px;
+      background: linear-gradient(135deg, #6c5ce7, #0984e3);
+      color: white;
+      font-size: 16px;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #4834d4, #74b9ff);
+      transform: translateY(-2px);
+    }
+
+    #message {
+      text-align: center;
+      margin-top: 15px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Registration Form</h2>
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" placeholder="Enter your name" />
+
+    <label for="email">Email*:</label>
+    <input type="email" id="email" placeholder="Enter your email" />
+    <div class="error" id="emailError"></div>
+
+    <label for="password">Password*:</label>
+    <input type="password" id="password" placeholder="Enter password" />
+    <div class="error" id="passwordError"></div>
+
+    <label for="phone">Phone Number*:</label>
+    <input type="tel" id="phone" placeholder="Enter phone number" />
+    <div class="error" id="phoneError"></div>
+
+    <button type="button" onclick="validateForm()">Submit</button>
+
+    <p id="message"></p>
+  </div>
+
+  <script>
+    function validateForm() {
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const name = document.getElementById("name").value.trim();
+
+      const emailError = document.getElementById("emailError");
+      const passwordError = document.getElementById("passwordError");
+      const phoneError = document.getElementById("phoneError");
+      const message = document.getElementById("message");
+
+      // Reset errors
+      emailError.textContent = "";
+      passwordError.textContent = "";
+      phoneError.textContent = "";
+      message.textContent = "";
+
+      let isValid = true;
+
+      // Email validation
+      if (!email.includes("@") || !email.includes(".")) {
+        emailError.textContent = "Please enter a valid email address.";
+        isValid = false;
+      }
+
+      // Password validation
+      if (password.length < 6) {
+        passwordError.textContent = "Password must be at least 6 characters.";
+        isValid = false;
+      }
+
+      // Phone number validation
+      if (phone.length !== 10 || isNaN(phone)) {
+        phoneError.textContent = "Phone number must be 10 digits.";
+        isValid = false;
+      }
+
+      if (isValid) {
+        message.style.color = "green";
+        message.textContent = "✅ Registration Successful!";
+        document.querySelector(".container").style.boxShadow = "0 0 20px rgba(0, 255, 0, 0.5)";
+        setTimeout(() => {
+          document.querySelector(".container").style.boxShadow = "0 5px 20px rgba(0,0,0,0.2)";
+          document.getElementById("name").value = "";
+          document.getElementById("email").value = "";
+          document.getElementById("password").value = "";
+          document.getElementById("phone").value = "";
+        }, 1500);
+      } else {
+        message.style.color = "red";
+        message.textContent = "⚠️ Please correct the errors above.";
+      }
+    }
+  </script>
+</body>
+</html>
