@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript Events Demo</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 30px;
+  }
+  h2 {
+    color: #333;
+  }
+  div, form {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+</style>
+</head>
+<body onload="alert('Page loaded successfully!')">
+<h1>JavaScript Events Demonstration</h1>
+
+<h2>Form Events</h2>
+<form onsubmit="submitForm(event)" onreset="alert('Form reset!')">
+  <label>Name:</label><br>
+  <input type="text" onfocus="alert('Name field focused!')" onblur="alert('Name field blurred!')"><br><br>
+  
+  <label>Email:</label><br>
+  <input type="email" onchange="alert('Email changed!')"><br><br>
+  
+  <label>About:</label><br>
+  <textarea onselect="alert('Text selected!')">Select some text...</textarea><br><br>
+
+  <button type="submit">Submit</button>
+  <button type="reset">Reset</button>
+</form>
+
+<h2>Mouse Events</h2>
+<div onmouseover="alert('Mouse entered!')" onmouseout="alert('Mouse left!')" onclick="alert('Box clicked!')" style="width:200px;height:100px;">
+  Hover or click here
+</div>
+
+<h2>Keyboard Events</h2>
+<div tabindex="0" onkeydown="alert('Key down!')" onkeypress="alert('Key pressed!')" onkeyup="alert('Key up!')" style="width:200px;height:60px;">
+  Click here and press any key
+</div>
+
+<h2>Event Bubbling</h2>
+<div id="outer" onclick="alert('Outer box clicked!')" style="background:#eef;padding:20px;">
+  Outer Box
+  <div id="inner" onclick="innerClick(event)" style="background:#cce;padding:20px;margin-top:10px;">
+    Inner Box (click me)
+  </div>
+</div>
+
+<script>
+function submitForm(event) {
+  event.preventDefault();
+  alert('Form submitted!');
+}
+
+function innerClick(event) {
+  alert('Inner box clicked!');
+  if(confirm('Stop event bubbling?')) {
+    event.stopPropagation();
+  }
+}
+</script>
+</body>
+</html>
